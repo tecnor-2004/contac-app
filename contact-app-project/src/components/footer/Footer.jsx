@@ -4,13 +4,13 @@ function Footer(){
     return(
         <div className="row justify-content-around position-fixed bottom-0 start-0 end-0 bg-secondary-subtle p-3">
             <div className="col-auto">
-                <span className=" bg-primary p-2 rounded-3" onClick={()=>{nav('/ContactList')}}>contacts</span>
+                <button className="btn bg-primary p-2 rounded-3" onClick={()=>{nav('/ContactList')}}>contacts</button>
             </div>
             <div className="col-auto">
-                <span className=" bg-primary p-2 rounded-3" onClick={()=>{nav('/FavouriteList')}}>favourite</span>
+                <button className="btn bg-primary p-2 rounded-3" onClick={()=>{nav('/FavouriteList')}}>favourite</button>
             </div>
             <div className="col-auto">
-                <span className=" bg-primary p-2 rounded-3" onClick={()=>{nav('/AddContact')}}>add</span>
+                <button className="btn bg-primary p-2 rounded-3" onClick={()=>{nav('/AddContact')}}>add</button>
             </div>
         </div>
     )
