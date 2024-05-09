@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Contact from "./Contact";
-
 function ContacList(){
     // const DATA = [
     //     
@@ -12,17 +11,19 @@ function ContacList(){
         .then(json=> setContact(json.results))
     },[])
     return(
-        <div className="container">
-            <div className="row">
-                <ul className="list-group">
-                       {
-                         contact.map((contact, i)=>{
-                            return <Contact data={contact} id={i} key={i}/>
-                            })    
-                       }
-                </ul>
+        <>
+            <div className="container">
+                <div className="row">
+                    <ul className="list-group">
+                        {
+                            contact.map((contact, i)=>{
+                                return <Contact data={contact} id={i} key={i}/>
+                                })    
+                        }
+                    </ul>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 export default ContacList; 

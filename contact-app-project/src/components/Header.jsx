@@ -5,7 +5,7 @@ function Header(){
                 <div className="col-12">
                     <div className="input-group">
                         <input type="text" className="form-control" placeholder="Search contact" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-                        <span className="input-group-text" id="basic-addon2">login</span>
+                        <button className="input-group-text" id="basic-addon2">login</button>
                     </div>
                 </div>
             </div>
