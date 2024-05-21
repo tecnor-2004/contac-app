@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import Footer from "./components/Footer"
+import { useNavigate } from "react-router-dom";
 function Layout(props){
-    // fetch('https://randomuser.me/api/?results=20')
-    // .then(res=>res.json())
-    // .then(json=> console.log(json.results))
+    const isLogedIn = JSON.parse(localStorage.getItem('isLoged'))
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(isLogedIn == false){
+            navigate('/Login')
+        }
+    },[])
     return(
         <>
             {props.children}
