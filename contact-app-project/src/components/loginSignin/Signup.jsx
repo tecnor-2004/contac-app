@@ -8,7 +8,8 @@ function Signup(){
     const [pass,setPass] = useState()
     const [secondPass,setSecondPass] = useState()
     const [similar,setSimilar] = useState(true)
-    const [agred, setAgred] = useState()
+    const [agred, setAgred] = useState(false)
+    const [terms,setTerms] = useState(true)
     const signupHandler = () =>{
         const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         if(pass == secondPass){
@@ -20,6 +21,7 @@ function Signup(){
             }
             else{
                 console.log('something is not right');
+                setTerms(false)
             }
             setSimilar(true)
         }
@@ -72,6 +74,9 @@ function Signup(){
                         <div className="col-12">
                             <div className={similar?`alert alert-danger d-none`:`alert alert-danger`} role="alert">
                                 passwords are not similar
+                            </div>
+                            <div className={terms?`alert alert-danger d-none`:`alert alert-danger`} role="alert">
+                                you did not agred with terms and conditions
                             </div>
                         </div>
                         <div className="col-12">

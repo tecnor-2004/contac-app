@@ -4,10 +4,10 @@ function Login(){
     const navigate = useNavigate();
     const [gmail,setGmail] = useState()
     const [pass,setPass] = useState()
-    const userData = JSON.parse(localStorage.getItem('userData'))
+    const userData = JSON.parse(localStorage.getItem('userData'))|| undefined
     const [exist,setExist] = useState(true)
     const loginHandler = ()=>{
-        if(gmail&&pass){
+        if(gmail&&pass && userData){
             if(gmail == userData.gmail && pass == userData.pass){
                 console.log("data corect");
                 localStorage.setItem('isLoged', true)
@@ -18,6 +18,10 @@ function Login(){
                 setExist(false)
             }
         }
+        else{
+            setExist(false)
+        }
+        console.log('i shot');
         event.preventDefault();
     }
     return(

@@ -16,7 +16,7 @@ function Header(){
             nav('/Account')
         }
     }
-    const mainList = JSON.parse(localStorage.getItem('mainList'))
+    const mainList = JSON.parse(localStorage.getItem('mainList'))|| []
     const [search,setSearch] = useState()
     let filteredSearch = search?.replace(/\s+/g, "")
     let lowerSearch = filteredSearch?.toLowerCase()
