@@ -26,8 +26,9 @@ function Header(){
         Result = mainList.filter(user =>
             user.name.first.toLowerCase().includes(lowerSearch) ||
             user.name.last.toLowerCase().includes(lowerSearch) ||
-            user.cell.toString().includes(search) ||
-            user.email.toString().toLowerCase().includes(lowerSearch)
+            user.cell.toString().includes(search) 
+            //user.email.toString().toLowerCase().includes(lowerSearch)
+            // the code above was preventing the contact list to render becuse when the user adds a contect they cant add a gmail but the code above will look for one
         )
     }
     return(
